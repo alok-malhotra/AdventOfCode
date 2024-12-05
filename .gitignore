@@ -1,0 +1,8 @@
+*/input/*.txt
+*/src/__pycache__
+*.DS_Store
+
+.idea
+.vscode
+
+config
