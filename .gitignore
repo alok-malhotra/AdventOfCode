@@ -1,5 +1,6 @@
 */input/*.txt
 */src/__pycache__
+*/src/helpers/__pycache__
 *.DS_Store
 
 .idea
