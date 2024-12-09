@@ -25,12 +25,8 @@ for i in range(m):
             antenna_positions[char].append([i, j])
 
 antinode_positions = set()
-antinode_positions_by_id = {}
 for antenna_id, positions in antenna_positions.items():
     antinodes_for_antenna_id = get_antinodes_for_antenna_id(positions, m, n)
-
-    antinode_positions_by_id[antenna_id] = antinode_positions_by_id.get(antenna_id, [])
-    antinode_positions_by_id[antenna_id].append(antinodes_for_antenna_id)
     
     for antinode in antinodes_for_antenna_id:
         antinode_positions.add((antinode[0], antinode[1]))
@@ -44,12 +40,8 @@ print("Time for Part A: {} seconds\n".format(part_a_completion_time))
 # Part B
 t_b_s = dt.now()
 antinode_positions_with_resonance = set()
-antinode_positions_by_id_with_resonance = {}
 for antenna_id, positions in antenna_positions.items():
     antinodes_for_antenna_id = get_antinodes_for_antenna_id_with_resonance(positions, m, n)
-
-    antinode_positions_by_id_with_resonance[antenna_id] = antinode_positions_by_id_with_resonance.get(antenna_id, [])
-    antinode_positions_by_id_with_resonance[antenna_id].append(antinodes_for_antenna_id)
     
     for antinode in antinodes_for_antenna_id:
         antinode_positions_with_resonance.add((antinode[0], antinode[1]))
